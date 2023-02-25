@@ -5,8 +5,8 @@ import netlifyIdentity from 'netlify-identity-widget'
 const requireAuth = (to, from, next) => {
   const user = netlifyIdentity.currentUser();
   if (user) {
-    next();
     netlifyIdentity.open('login');
+    next();
   } else {
     next('/login');
   }
