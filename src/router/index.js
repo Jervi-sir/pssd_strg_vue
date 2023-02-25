@@ -6,6 +6,7 @@ const requireAuth = (to, from, next) => {
   const user = netlifyIdentity.currentUser();
   if (user) {
     next();
+    netlifyIdentity.open('login');
   } else {
     next('/login');
   }
