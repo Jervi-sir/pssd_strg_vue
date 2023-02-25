@@ -9,7 +9,7 @@ import AddSocial from '../views/Social/AddSocial.vue'
 const requireAuth = (to, from, next) => {
   const user = netlifyIdentity.currentUser();
   if (user) {
-    console.log(netlifyIdentity.currentUser().id());
+    console.log(netlifyIdentity.currentUser().id);
     next();
   } else {
     netlifyIdentity.open('login');
