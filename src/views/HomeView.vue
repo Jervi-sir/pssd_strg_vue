@@ -5,6 +5,7 @@
     <div>
       <button @click="showLogin()">Log in</button>
       <button @click="showSignup()">Sign up</button>
+      <button @click="logout()">Logout</button>
     </div>
   </div>
   
@@ -30,6 +31,9 @@ export default {
     showSignup() {
       netlifyIdentity.open('signup');
     },
+    logout() {
+      netlifyIdentity.logout();
+    }
   },
 }
 </script>
