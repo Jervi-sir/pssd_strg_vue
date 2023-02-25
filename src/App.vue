@@ -1,7 +1,11 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/about">About</router-link> |
+    <router-link to="/all_accounts">All Accounts</router-link> |
+    <router-link to="/add_account">Add Account</router-link> |
+    <router-link to="/all_socials">All Socials</router-link> |
+    <router-link to="/add_social">Add Social</router-link>
   </nav>
   <router-view/>
 </template>
