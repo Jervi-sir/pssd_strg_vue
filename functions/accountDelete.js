@@ -1,6 +1,9 @@
 const mysql = require('mysql2/promise');
 
+//http://localhost:8888/.netlify/functions/accountDelete?id=1&user_id=sdf-qwe2-eqw5-%26sdf-ersdf
+
 exports.handler = async function(event, context) {
+  const { id, user_id } = event.queryStringParameters;
   try {
     const connection = await mysql.createConnection({
       host: 'aws-eu-west-2.connect.psdb.cloud',
@@ -10,10 +13,10 @@ exports.handler = async function(event, context) {
       database: 'pssd_strg',
       ssl: {
         rejectUnauthorized: true,
-      },
+      },decodeURIComponent
     });
 
-    const [rows] = await connection.query('SELECT * FROM socials');
+    const [rows] = await connection.query(`DELETE FROM accounts WHERE id = '${id}' AND user_id = '${user_id}';`);
     return {
       statusCode: 200,
       body: JSON.stringify(rows),

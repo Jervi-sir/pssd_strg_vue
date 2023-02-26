@@ -6,10 +6,11 @@ import AddAccount from '../views/Account/AddAccount.vue'
 import ListSocials from '../views/Social/ListSocials.vue'
 import AddSocial from '../views/Social/AddSocial.vue'
 
+/* eslint-disable */
 const requireAuth = (to, from, next) => {
   const user = netlifyIdentity.currentUser();
   if (user) {
-    console.log(netlifyIdentity.currentUser().id);
+    //console.log(netlifyIdentity.currentUser().id);
     next();
   } else {
     netlifyIdentity.open('login');
@@ -18,6 +19,7 @@ const requireAuth = (to, from, next) => {
   }
 };
 
+/* eslint-disable */
 const isGuest = (to, from, next) => {
   const user = netlifyIdentity.currentUser();
   if(user) {

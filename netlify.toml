@@ -1,2 +1,12 @@
 [functions]
   directory = "./functions"
+
+[build.processing]
+  # Disable base64 encoding for function responses
+  "functions/*.js" = { content = '''
+    exports.handler = async (event, context) => {
+      const response = await originalHandler(event, context);
+      response.isBase64Encoded = false;
+      return response;
+    };
+  ''' }
