@@ -15,7 +15,7 @@ const requireAuth = (to, from, next) => {
   } else {
     netlifyIdentity.open('login');
     
-    next('/login');
+    next('/');
   }
 };
 
