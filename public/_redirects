@@ -1,10 +1,5 @@
 # Redirects from what the browser requests to what we serve
 
-/all_accounts /all_accounts 200
-/add_account  /add_account  200
-/all_socials  /all_socials  200
-/add_social   /add_social   200
-/about        /about        200
 /*    /index.html    200
 
 
