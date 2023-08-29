@@ -1,5 +1,10 @@
 # pssd_strg
 
+## Database
+```
+in PlanetScale
+```
+
 ## Project setup
 ```
 npm install
